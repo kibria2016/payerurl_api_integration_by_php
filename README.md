@@ -26,3 +26,7 @@ The `payerurl_payment_response.php` is a callback or response script that handle
 9. After all security checks and processing, the script constructs a response with a status code and a message, which includes the transaction data. It also logs this data to a file named "payerurl.log."
 10. Finally, the script sends a JSON response with the status code and message back to the calling system.
 In summary, this PHP script is designed to handle callback notifications from the Payerurl payment gateway. It performs various security checks and processes the transaction data, logging it and sending a JSON response back to the calling system based on the transaction's status code.
+
+The 'payerurl_payment_success.php' is a simple script that is meant to be called upon a successful payment.
+The 'payerurl_payment_cancel.php' is a simple script that is meant to be called when a payment is canceled by the user.
+ 
