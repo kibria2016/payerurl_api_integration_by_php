@@ -21,9 +21,8 @@ The `payerurl_payment_response.php` is a callback or response script that handle
 5. It checks if a transaction ID is present and not empty. If the transaction ID is missing, it sends an error response.
 6. It also checks if an order ID is present and not empty. If the order ID is missing, it sends an error response.
 7. Depending on the status code received in the response, the script takes different actions. If the status code indicates a canceled order, it sends a response indicating the order is canceled. If the status code is not 200, it sends a response indicating the order is not complete.
-8. The script includes commented-out code for advanced security checks using a signature. These checks are currently disabled, but they can be enabled if needed.
-9. After all security checks and processing, the script constructs a response with a status code and a message, which includes the transaction data. It also logs this data to a file named "payerurl.log."
-10. Finally, the script sends a JSON response with the status code and message back to the calling system.
+8. After all security checks and processing, the script constructs a response with a status code and a message, which includes the transaction data. It also logs this data to a file named "payerurl.log."
+9. Finally, the script sends a JSON response with the status code and message back to the calling system.
 In summary, this PHP script is designed to handle callback notifications from the Payerurl payment gateway. It performs various security checks and processes the transaction data, logging it and sending a JSON response back to the calling system based on the transaction's status code.
 
 # The 'payerurl_payment_success.php' to be called upon a successful payment.
