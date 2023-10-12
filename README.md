@@ -14,16 +14,15 @@ Here's a breakdown of what the code does:
 Please note you must have set up the Payerurl API correctly and have obtained the API credentials and endpoint URLs as mentioned in the comments. Also, make sure you handle any potential error scenarios and exceptions that may occur during the API request and response handling.
 
 # payerurl_payment_response.php
-The payerurl_payment_response.ph is a callback or response script that handles notifications and responses from the Payerurl payment gateway. 
-Here's a summary of what this script does:
-It begins by defining Payerurl API credentials, including the public and secret keys, for authentication.
-The script checks for the presence of an "Authorization" header in the HTTP request. If the header is not present, it attempts to extract authorization information from the POST data.
-It verifies the public key from the authorization header (or POST data) and compares it with the stored public key. If they do not match, an error response is sent.
-The script then collects various data from the POST request, including order ID, external transaction ID, transaction ID, status code, notes, and various other transaction details.
-It checks if a transaction ID is present and not empty. If the transaction ID is missing, it sends an error response.
-It also checks if an order ID is present and not empty. If the order ID is missing, it sends an error response.
-Depending on the status code received in the response, the script takes different actions. If the status code indicates a canceled order, it sends a response indicating the order is canceled. If the status code is not 200, it sends a response indicating the order is not complete.
-The script includes commented-out code for advanced security checks using a signature. These checks are currently disabled, but they can be enabled if needed.
-After all security checks and processing, the script constructs a response with a status code and a message, which includes the transaction data. It also logs this data to a file named "payerurl.log."
-Finally, the script sends a JSON response with the status code and message back to the calling system.
-
+The `payerurl_payment_response.php` is a callback or response script that handles notifications and responses from the Payerurl payment gateway. Here's a summary of what this script does:
+1. It begins by defining Payerurl API credentials, including the public and secret keys, for authentication.
+2. The script checks for the presence of an "Authorization" header in the HTTP request. If the header is not present, it attempts to extract authorization information from the POST data.
+3. It verifies the public key from the authorization header (or POST data) and compares it with the stored public key. If they do not match, an error response is sent.
+4. The script then collects various data from the POST request, including order ID, external transaction ID, transaction ID, status code, notes, and various other transaction details.
+5. It checks if a transaction ID is present and not empty. If the transaction ID is missing, it sends an error response.
+6. It also checks if an order ID is present and not empty. If the order ID is missing, it sends an error response.
+7. Depending on the status code received in the response, the script takes different actions. If the status code indicates a canceled order, it sends a response indicating the order is canceled. If the status code is not 200, it sends a response indicating the order is not complete.
+8. The script includes commented-out code for advanced security checks using a signature. These checks are currently disabled, but they can be enabled if needed.
+9. After all security checks and processing, the script constructs a response with a status code and a message, which includes the transaction data. It also logs this data to a file named "payerurl.log."
+10. Finally, the script sends a JSON response with the status code and message back to the calling system.
+In summary, this PHP script is designed to handle callback notifications from the Payerurl payment gateway. It performs various security checks and processes the transaction data, logging it and sending a JSON response back to the calling system based on the transaction's status code.
