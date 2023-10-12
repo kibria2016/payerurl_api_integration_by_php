@@ -1,4 +1,3 @@
-# payerurl_api_integration_by_php
 # payerurl_payment_request.php
 The payerurl_payment_request.php is required to be setting up and making a request to the Payerurl API for processing a payment. It's designed to generate a unique order ID, specify order details, create a digital signature for authentication, send the payment request to the Payerurl API, and then redirect the user to the Payerurl payment page if the request is successful.
 Here's a breakdown of what the code does:
@@ -27,6 +26,6 @@ The `payerurl_payment_response.php` is a callback or response script that handle
 10. Finally, the script sends a JSON response with the status code and message back to the calling system.
 In summary, this PHP script is designed to handle callback notifications from the Payerurl payment gateway. It performs various security checks and processes the transaction data, logging it and sending a JSON response back to the calling system based on the transaction's status code.
 
-The 'payerurl_payment_success.php' is a simple script that is meant to be called upon a successful payment.
-The 'payerurl_payment_cancel.php' is a simple script that is meant to be called when a payment is canceled by the user.
+# The 'payerurl_payment_success.php' is a simple script that is meant to be called upon a successful payment.
+# The 'payerurl_payment_cancel.php' is a simple script that is meant to be called when a payment is canceled by the user.
  
