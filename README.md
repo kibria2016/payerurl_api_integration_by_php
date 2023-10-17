@@ -1,6 +1,11 @@
 # payerurl_payment_request.php
 The payerurl_payment_request.php is required to be setting up and making a request to the Payerurl API for processing a payment. It's designed to generate a unique order ID, specify order details, create a digital signature for authentication, send the payment request to the Payerurl API, and then redirect the user to the Payerurl payment page if the request is successful.
 Here's a breakdown of what the code does:
+
+| Variable | Description |
+| --- | --- |
+| $invoiceid | unique order ID, this order number must be unique |
+
 1. It generates a unique order ID (`$invoiceid`) based on the current timestamp.
 2. It sets the order total amount (`$amount`), currency (`$currency`), and billing user information.
 3. Defines the redirect URL after a successful payment (`$redirect_to`), the notification URL for receiving payment responses (`$notify_url`), and the cancel URL in case the user cancels the payment (`$cancel_url`).
