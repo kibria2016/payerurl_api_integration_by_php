@@ -10,7 +10,8 @@ Here's a breakdown of what the code does:
 | $redirect_to | After successful payment customer will redirect to this url. |
 | $notify_url | Response URL/cancel URL/ Callback URL/ our system will only send response to this url. |
 | $cancel_url | If you user cancel any payment, user will redirect to cancel url |
-| $payerurl_public_key, $payerurl_secret_key | Payerurl API credentials|
+| $payerurl_public_key and $payerurl_secret_key | Payerurl API credentials|
+| $$items | Defines the order items in the `$items` array, including the item name, quantity, and price |
 
 1. It generates a unique order ID (`$invoiceid`) based on the current timestamp.
 2. It sets the order total amount (`$amount`), currency (`$currency`), and billing user information.
@@ -21,7 +22,7 @@ Here's a breakdown of what the code does:
 7. Sends a POST request to the Payerurl API with the constructed parameters and the authorization header.
 8. Processes the API response, which includes a redirect URL to the Payerurl payment page.
 9. If the response is successful (HTTP status code 200) and contains a valid redirect URL, it redirects the user to the Payerurl payment page.
-Please note you must have set up the Payerurl API correctly and have obtained the API credentials and endpoint URLs as mentioned in the comments. Also, make sure you handle any potential error scenarios and exceptions that may occur during the API request and response handling.
+Please note you must have set up the Payerurl API key correctly and have obtained the API credentials and endpoint URLs as mentioned in the comments. Also, make sure you handle any potential error scenarios and exceptions that may occur during the API request and response handling.
 
 # payerurl_payment_response.php
 The `payerurl_payment_response.php` is a callback or response script that handles notifications and responses from the Payerurl payment gateway. Here's a summary of what this script does:
