@@ -10,6 +10,7 @@ Here's a breakdown of what the code does:
 | $redirect_to | After successful payment customer will redirect to this url. |
 | $notify_url | Response URL/cancel URL/ Callback URL/ our system will only send response to this url. |
 | $cancel_url | If you user cancel any payment, user will redirect to cancel url |
+| $payerurl_public_key, $payerurl_secret_key | Payerurl API credentials|
 
 1. It generates a unique order ID (`$invoiceid`) based on the current timestamp.
 2. It sets the order total amount (`$amount`), currency (`$currency`), and billing user information.
