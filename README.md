@@ -41,37 +41,6 @@ In summary, this PHP script is designed to handle callback notifications from th
 # The 'payerurl_payment_success.php' to be called upon a successful payment.
 # The 'payerurl_payment_cancel.php' to be called when a payment is canceled by the user.
 
-# summary:
-1. `payerurl_payment_request.php`:
-   - Generates a unique order ID for a payment request.
-   - Sets the order total amount and currency.
-   - Defines billing information for the user.
-   - Specifies redirect, notification, and cancel URLs.
-   - Provides Payerurl API credentials (public and secret keys).
-   - Defines order items and constructs API parameters.
-   - Generates a digital signature for the API request.
-   - Sends a payment request to the Payerurl payment gateway.
-   - Redirects the user to the payment page on a successful response.
-
-2. `payerurl_payment_response.php`:
-   - Handles notifications and responses from the Payerurl payment gateway.
-   - Verifies Payerurl API credentials (public and secret keys).
-   - Extracts authorization information from headers or POST data.
-   - Validates the public key from the authorization information.
-   - Collects various transaction details from the POST request.
-   - Checks the status code and takes different actions based on it.
-   - Includes optional code for advanced security checks using a signature.
-   - Constructs a response with a status code and message.
-   - Logs transaction data to a file named "payerurl.log."
-
-3. `payerurl_payment_success.php`:
-   - Displays a "PAYMENT SUCCESS" message when accessed.
-   - Indicates that a payment has been successfully processed.
-
-4. `payerurl_payment_cancel.php`:
-   - Displays a "PAYMENT CANCEL" message when accessed.
-   - Indicates that a payment has been canceled by the user.
-
 In summary, these PHP files work together to facilitate online payments through the Payerurl payment gateway. 
 The `payerurl_payment_request.php` initiates the payment request,
 `payerurl_payment_response.php` handles responses and notifications, 
